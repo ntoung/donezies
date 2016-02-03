@@ -1,0 +1,31 @@
+<ion-view view-title="SOS">
+  <ion-nav-bar>
+    <ion-nav-buttons side="secondary">
+      <a class="button button-clear button-dark item-remove-animate item-avatar" href="#/tab/sos/compose">
+          <i class="icon ion-compose"></i>
+      </a>
+      </ion-item>   
+      
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content>
+    <div class="button-bar">
+      <a class="button">My Network</a>
+      <a class="button">Global</a>
+    </div>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/sos/chat/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

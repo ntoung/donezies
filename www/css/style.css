@@ -1,0 +1,41 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #000;
+  font-weight: 500;
+  font-family: "-apple-system", "Source Sans Pro", "Roboto", "Segoe UI", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+  font-weight: normal;
+  line-height: 1; }
+
+
+body {
+  margin: 0px;
+  overflow:scroll;
+  height: 2000px;
+}
+
+header {
+  background: #f5b335;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nav-up {
+  top: -40px;
+}
+
+main {
+
+  height: 2000px;
+}
+
+footer { background: #ddd;}
+* { color: transparent}
