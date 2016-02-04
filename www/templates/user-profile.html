@@ -1,18 +1,135 @@
 
 
-
-
-
 <!--<header class="nav-down">-->
   <!--This is your menu.-->
 <!--</header>-->
+<ion-content>
 <main>
-  <div class="">
+  <div class="profile-overview nav-down">
+    <!-- User Name -->
+    <h4>{{user.name}}</h4>
 
+    <!-- Profile avatar -->
+    <div>
+      <img class="avatar" ng-src="{{user.face}}">
+    </div>
+    <span>
+      <!-- Views -->
+      <i class="icon ion-eye profile-info">{{user.views}}</i>
 
+      <!-- Favorites -->
+      <i class="icon ion-heart profile-info">{{user.favorites}}</i>
+
+    </span>
+  </div>
+
+  <div class="profile-nav">
+
+    <ul>
+      <!-- Entries -->
+      <li>
+        <a title="entries" href="#/user/entries">
+          <i class="icon ion-clipboard"></i>
+        </a>
+      </li>
+
+      <!-- Images -->
+      <li>
+        <a title="images" href="#/user/images">
+          <i class="icon ion-images"></i>
+        </a>
+      </li>
+
+      <!-- Map -->
+      <li>
+        <a title="map" href="#/user/map">
+          <i class="icon ion-map"></i>
+        </a>
+      </li>
+
+      <!-- Badges -->
+      <li>
+        <a title="badges" href="#/user/badges">
+          <i class="icon ion-ribbon-b"></i>
+        </a>
+      </li>
+
+    </ul>
 
   </div>
+
+  <!-- Entries -->
+
+  <!-- Needs an embedded view -->
+  <!-- style for this should take up remainder of the page view -->
+  <div class="content">
+    <div ng-repeat="entry in entries">
+      <div>
+        <!-- The completed class makes this link navagable -->
+        <a ></a>
+        <!-- The completed class makes it green-->
+        <!-- This is the checkmark to mark completed -->
+        <i class="status" ng-class="completed: entry.completed"></i>
+        <h1>{{entry.title}}</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Images -->
+  <div class="content">
+    <div ng-repeat="image in images">
+      <a><img src="{{image.url}}" /></a>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="content">
+    <div ng-repeat="image in images">
+      <a><img src="{{image.url}}" /></a>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="content">
+    <div ng-repeat="badge in badges">
+      <a><img src="{{image.url}}" /></a>
+    </div>
+  </div>
+
+
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+  <h1>nathan</h1>
+
+
+
+
 </main>
+</ion-content>
 <!--<footer>-->
   <!--This is your footer.-->
 <!--</footer>-->

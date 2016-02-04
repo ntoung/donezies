@@ -24,6 +24,15 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+
+  .state('intro', {
+    url: '/',
+    templateUrl: 'index.html',
+    controller: 'ViewCtrl'
+  })
+
+
+
   // setup an abstract state for the tabs directive
   //  .state('tab', {
   //  url: '/tab',
@@ -38,6 +47,18 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
     templateUrl: 'templates/user-profile.html',
     controller: 'UserProfileCtrl'
   })
+    .state('user-profile.entries', {
+
+    })
+    .state('user-profile.images', {
+
+    })
+    .state('user-profile.map', {
+
+    })
+    .state('user-profile.badges', {
+
+    })
 
   //.state('tab.donezfeed', {
   //  url: '/donezfeed',
@@ -98,6 +119,6 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   //  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/u');
+  $urlRouterProvider.otherwise('/');
 
 });
