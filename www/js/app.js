@@ -34,7 +34,7 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
 
   .state('user-profile', {
     url: '/u',
-    templateUrl: 'templates/user-profile.html',
+    templateUrl: 'templates/user-profile-entries.html',
     controller: 'UserProfileCtrl'
   })
     .state('user-profile.entries', {

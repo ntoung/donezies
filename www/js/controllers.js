@@ -27,7 +27,6 @@ angular.module('donezies.controllers', [])
   console.log("scroll.");
 
   $('main').scroll(function(event){
-    console.log('hello1');
     didScroll = true;
   });
 
@@ -66,42 +65,8 @@ angular.module('donezies.controllers', [])
 })
 
 
-.controller('DoneziesCtrl', function($scope, $stateParams) {
-  $scope.options = {
-    loop: false,
-    // effect: fade,
-    speed: 500,
-  }
-  $scope.data = {};
-  $scope.$watch('data.slider', function(nv, ov) {
-    $scope.slider = $scope.data.slider;
-  })
-})
-
-.controller('SOSCtrl', function($scope, Chats) {
-  Chats.all().then(function(chats) {
-    $scope.chats = chats;
-  });
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('SOSDetailCtrl', function($scope, $stateParams, Chats) {
-  Chats.all().then(function(chats) {
-    $scope.chats = chats;
-  });
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('SOSComposeCtrl', function($scope, $stateParams, Compose) {
-
-})
-
 .controller('ViewCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
-
+  console.log("ViewCtrl loaded.")
   $scope.data = {
     numViewableSlides : 0,
     slideIndex : 0,
@@ -109,7 +74,7 @@ angular.module('donezies.controllers', [])
     secondInstruction : false,
     slides : [
       {
-        'template' : 'templates/user-profile.html',
+        'template' : 'templates/user-profile-entries.html',
         'viewable' : true
       },
 

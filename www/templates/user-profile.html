@@ -1,135 +1,140 @@
+<!--<ion-nav-view>-->
+  <!--<ion-view>-->
+    <!--<ion-content>-->
+      <!--<h2>USER-PROFILE</h2>-->
+    <!--</ion-content>-->
+  <!--</ion-view>-->
+<!--</ion-nav-view>-->
 
 
-<!--<header class="nav-down">-->
-  <!--This is your menu.-->
-<!--</header>-->
-<ion-content>
-<main>
-  <div class="profile-overview nav-down">
-    <!-- User Name -->
-    <h4>{{user.name}}</h4>
 
-    <!-- Profile avatar -->
-    <div>
-      <img class="avatar" ng-src="{{user.face}}">
-    </div>
-    <span>
-      <!-- Views -->
-      <i class="icon ion-eye profile-info">{{user.views}}</i>
+<!--<ion-content>-->
+<!--<main>-->
+  <!--<div class="profile-overview nav-down">-->
+    <!--&lt;!&ndash; User Name &ndash;&gt;-->
+    <!--<h4>{{user.name}}</h4>-->
 
-      <!-- Favorites -->
-      <i class="icon ion-heart profile-info">{{user.favorites}}</i>
+    <!--&lt;!&ndash; Profile avatar &ndash;&gt;-->
+    <!--<div>-->
+      <!--<img class="avatar" ng-src="{{user.face}}">-->
+    <!--</div>-->
+    <!--<span>-->
+      <!--&lt;!&ndash; Views &ndash;&gt;-->
+      <!--<i class="icon ion-eye profile-info">{{user.views}}</i>-->
 
-    </span>
-  </div>
+      <!--&lt;!&ndash; Favorites &ndash;&gt;-->
+      <!--<i class="icon ion-heart profile-info">{{user.favorites}}</i>-->
 
-  <div class="profile-nav">
+    <!--</span>-->
+  <!--</div>-->
 
-    <ul>
-      <!-- Entries -->
-      <li>
-        <a title="entries" href="#/u/entries">
-          <i class="icon ion-clipboard"></i>
-        </a>
-      </li>
+  <!--<div class="profile-nav">-->
 
-      <!-- Images -->
-      <li>
-        <a title="images" href="#/u/images">
-          <i class="icon ion-images"></i>
-        </a>
-      </li>
+    <!--<ul>-->
+      <!--&lt;!&ndash; Entries &ndash;&gt;-->
+      <!--<li>-->
+        <!--<a title="entries" href="#/u/entries">-->
+          <!--<i class="icon ion-clipboard"></i>-->
+        <!--</a>-->
+      <!--</li>-->
 
-      <!-- Map -->
-      <li>
-        <a title="map" href="#/u/map">
-          <i class="icon ion-map"></i>
-        </a>
-      </li>
+      <!--&lt;!&ndash; Images &ndash;&gt;-->
+      <!--<li>-->
+        <!--<a title="images" href="#/u/images">-->
+          <!--<i class="icon ion-images"></i>-->
+        <!--</a>-->
+      <!--</li>-->
 
-      <!-- Badges -->
-      <li>
-        <a title="badges" href="#/u/badges">
-          <i class="icon ion-ribbon-b"></i>
-        </a>
-      </li>
+      <!--&lt;!&ndash; Map &ndash;&gt;-->
+      <!--<li>-->
+        <!--<a title="map" href="#/u/map">-->
+          <!--<i class="icon ion-map"></i>-->
+        <!--</a>-->
+      <!--</li>-->
 
-    </ul>
+      <!--&lt;!&ndash; Badges &ndash;&gt;-->
+      <!--<li>-->
+        <!--<a title="badges" href="#/u/badges">-->
+          <!--<i class="icon ion-ribbon-b"></i>-->
+        <!--</a>-->
+      <!--</li>-->
 
-  </div>
+    <!--</ul>-->
 
-  <!-- Entries -->
+  <!--</div>-->
 
-  <!-- Needs an embedded view -->
-  <!-- style for this should take up remainder of the page view -->
-  <div class="content">
-    <div ng-repeat="entry in entries">
-      <div>
-        <!-- The completed class makes this link navagable -->
-        <a ></a>
-        <!-- The completed class makes it green-->
-        <!-- This is the checkmark to mark completed -->
-        <i class="status" ng-class="completed: entry.completed"></i>
-        <h1>{{entry.title}}</h1>
-      </div>
-    </div>
-  </div>
+  <!--&lt;!&ndash; Entries &ndash;&gt;-->
 
-  <!-- Images -->
+  <!--&lt;!&ndash; Needs an embedded view &ndash;&gt;-->
+  <!--&lt;!&ndash; style for this should take up remainder of the page view &ndash;&gt;-->
   <!--<div class="content">-->
-    <!--<div ng-repeat="image in images">-->
-      <!--<a><img src="{{image.url}}" /></a>-->
+    <!--<div ng-repeat="entry in entries">-->
+      <!--<div>-->
+        <!--&lt;!&ndash; The completed class makes this link navagable &ndash;&gt;-->
+        <!--<a ></a>-->
+        <!--&lt;!&ndash; The completed class makes it green&ndash;&gt;-->
+        <!--&lt;!&ndash; This is the checkmark to mark completed &ndash;&gt;-->
+        <!--<i class="status" ng-class="completed: entry.completed"></i>-->
+        <!--<h1>{{entry.title}}</h1>-->
+      <!--</div>-->
     <!--</div>-->
   <!--</div>-->
 
-  <!--&lt;!&ndash; Map &ndash;&gt;-->
-  <!--<div class="content">-->
-    <!--<div ng-repeat="image in images">-->
-      <!--<a><img src="{{image.url}}" /></a>-->
-    <!--</div>-->
-  <!--</div>-->
+  <!--&lt;!&ndash; Images &ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-repeat="image in images">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-  <!--&lt;!&ndash; Badges &ndash;&gt;-->
-  <!--<div class="content">-->
-    <!--<div ng-repeat="badge in badges">-->
-      <!--<a><img src="{{image.url}}" /></a>-->
-    <!--</div>-->
-  <!--</div>-->
+  <!--&lt;!&ndash;&lt;!&ndash; Map &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-repeat="image in images">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
-  <h1>nathan</h1>
+  <!--&lt;!&ndash;&lt;!&ndash; Badges &ndash;&gt;&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-repeat="badge in badges">&ndash;&gt;-->
+      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
+  <!--<h1>nathan</h1>-->
 
 
-</main>
-</ion-content>
-<!--<footer>-->
-  <!--This is your footer.-->
-<!--</footer>-->
+
+
+<!--</main>-->
+<!--</ion-content>-->
+<!--&lt;!&ndash;<footer>&ndash;&gt;-->
+  <!--&lt;!&ndash;This is your footer.&ndash;&gt;-->
+<!--&lt;!&ndash;</footer>&ndash;&gt;-->

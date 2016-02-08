@@ -37,23 +37,23 @@
 
   </head>
 
-  <body ng-app="donezies" animation="slide-left-right-ios7">
+  <body ng-app="donezies" ng-controller="ViewCtrl" animation="slide-left-right-ios7">
 
 
-  <ion-nav-view>
 
 
-  <ion-view>
-    <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false">
+  <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false">
+    <!--<ion-nav-view>-->
+
 
       <ion-slide ng-repeat="slide in data.slides | filter:{viewable : true}">
 
         <div ng-include src="slide.template"></div>
       </ion-slide>
+    <!--</ion-nav-view>-->
+  </ion-slide-box>
 
-    </ion-slide-box>
-  </ion-view>
-  </ion-nav-view>
+
 
 
 
