@@ -1,21 +1,21 @@
 angular.module('donezies.services', [])
 
-.factory('Chats', function($http, $q) {
-    var chats;
+.factory('Users', function($http, $q) {
+    var users;
 
   return {
     all: function() {
-      return chats = $http.get('data/chats.json').then(function(res) {
+      return users = $http.get('data/users.json').then(function(res) {
         return res.data;
       });
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(user) {
+      users.splice(chats.indexOf(user), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(userId) {
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].id === parseInt(userId)) {
+          return users[i];
         }
       }
       return null;

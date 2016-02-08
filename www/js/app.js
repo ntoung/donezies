@@ -23,16 +23,6 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
-
-  .state('intro', {
-    url: '/',
-    templateUrl: 'index.html',
-    controller: 'ViewCtrl'
-  })
-
-
-
   // setup an abstract state for the tabs directive
   //  .state('tab', {
   //  url: '/tab',
@@ -119,6 +109,6 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   //  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/u');
 
 });
