@@ -1,140 +1,81 @@
-<!--<ion-nav-view>-->
-  <!--<ion-view>-->
-    <!--<ion-content>-->
-      <!--<h2>USER-PROFILE</h2>-->
-    <!--</ion-content>-->
-  <!--</ion-view>-->
-<!--</ion-nav-view>-->
+<div ng-controller="UserProfileCtrl" style="height:100%">
+  <!-- Top-View -->
+  <div class="top-view">
+    <img ng-src="img/user-profile-header.png" style="width:100%;" />
+
+  </div>
+  <!-- Navbar -->
+  <div class="nav-bar" style="height:50px; position:relative; ">
+    <div class="tabs tabs-icon-only" style="bottom:initial; border-top-width:0px; background-color:white; z-index: 21; box-shadow:0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);">
+      <a class="tab-item nav-entries" href="#/donezies/entries">
+        <i class="icon ion-images"></i>
+      </a>
+      </a>
+      <a class="tab-item nav-map" href="#/donezies/map">
+        <i class="icon ion-ios-location"></i>
+      </a>
+      <a class="tab-item nav-badges" href="#/donezies/badges">
+        <i class="icon ion-ribbon-b"></i>
+      </a>
+    </div>
+  </div>
 
 
+  <!-- Subview -->
+  <div class="subview-container" style="height:100%; background-color:#efeff4; z-index: 0;">
+    <ion-content class="flag subview-entries" style=" position:relative; display:default">
+      <div style="padding-top: 1px;" class="subview">
+        <div class="card" style="margin:20px; padding:15px; color: white; text-align:left;"  ng-repeat="entry in entries">
+          <header ng-click="GoToEntry()">
+            <h4 style="margin:0">{{entry.title}}</h4>
 
-<!--<ion-content>-->
-<!--<main>-->
-  <!--<div class="profile-overview nav-down">-->
-    <!--&lt;!&ndash; User Name &ndash;&gt;-->
-    <!--<h4>{{user.name}}</h4>-->
+            <div style="font-size:1em; color:black;">
+              <p>
+                <i class="icon ion-clock" style="padding-right:10px;"> {{entry.date}}</i>
+                <i class="icon ion-eye" style="padding-right:10px;"> {{entry.views}}</i>
+                <i class="icon ion-heart" style="padding-right:10px;"> {{entry.favorites}}</i>
+              </p>
 
-    <!--&lt;!&ndash; Profile avatar &ndash;&gt;-->
-    <!--<div>-->
-      <!--<img class="avatar" ng-src="{{user.face}}">-->
-    <!--</div>-->
-    <!--<span>-->
-      <!--&lt;!&ndash; Views &ndash;&gt;-->
-      <!--<i class="icon ion-eye profile-info">{{user.views}}</i>-->
+            </div>
+          </header>
 
-      <!--&lt;!&ndash; Favorites &ndash;&gt;-->
-      <!--<i class="icon ion-heart profile-info">{{user.favorites}}</i>-->
+          <!-- More info -->
+          <div class="entry-info" id="{{entry.id}}" style="display:none">
+            <div style="width: 100%; align-content:center; font-size:1em; color:black;">
+              <img ng-src="{{entry.cover}}" style="width:100%; align-content: center"/>
+              <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+              <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+              <p style="text-align:right;">Read More...</p>
+            </div>
+          </div>
+        </div>
 
-    <!--</span>-->
-  <!--</div>-->
-
-  <!--<div class="profile-nav">-->
-
-    <!--<ul>-->
-      <!--&lt;!&ndash; Entries &ndash;&gt;-->
-      <!--<li>-->
-        <!--<a title="entries" href="#/u/entries">-->
-          <!--<i class="icon ion-clipboard"></i>-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--&lt;!&ndash; Images &ndash;&gt;-->
-      <!--<li>-->
-        <!--<a title="images" href="#/u/images">-->
-          <!--<i class="icon ion-images"></i>-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--&lt;!&ndash; Map &ndash;&gt;-->
-      <!--<li>-->
-        <!--<a title="map" href="#/u/map">-->
-          <!--<i class="icon ion-map"></i>-->
-        <!--</a>-->
-      <!--</li>-->
-
-      <!--&lt;!&ndash; Badges &ndash;&gt;-->
-      <!--<li>-->
-        <!--<a title="badges" href="#/u/badges">-->
-          <!--<i class="icon ion-ribbon-b"></i>-->
-        <!--</a>-->
-      <!--</li>-->
-
-    <!--</ul>-->
-
-  <!--</div>-->
-
-  <!--&lt;!&ndash; Entries &ndash;&gt;-->
-
-  <!--&lt;!&ndash; Needs an embedded view &ndash;&gt;-->
-  <!--&lt;!&ndash; style for this should take up remainder of the page view &ndash;&gt;-->
-  <!--<div class="content">-->
-    <!--<div ng-repeat="entry in entries">-->
-      <!--<div>-->
-        <!--&lt;!&ndash; The completed class makes this link navagable &ndash;&gt;-->
-        <!--<a ></a>-->
-        <!--&lt;!&ndash; The completed class makes it green&ndash;&gt;-->
-        <!--&lt;!&ndash; This is the checkmark to mark completed &ndash;&gt;-->
-        <!--<i class="status" ng-class="completed: entry.completed"></i>-->
-        <!--<h1>{{entry.title}}</h1>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--&lt;!&ndash; Images &ndash;&gt;-->
-  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
-    <!--&lt;!&ndash;<div ng-repeat="image in images">&ndash;&gt;-->
-      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-  <!--&lt;!&ndash;&lt;!&ndash; Map &ndash;&gt;&ndash;&gt;-->
-  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
-    <!--&lt;!&ndash;<div ng-repeat="image in images">&ndash;&gt;-->
-      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-  <!--&lt;!&ndash;&lt;!&ndash; Badges &ndash;&gt;&ndash;&gt;-->
-  <!--&lt;!&ndash;<div class="content">&ndash;&gt;-->
-    <!--&lt;!&ndash;<div ng-repeat="badge in badges">&ndash;&gt;-->
-      <!--&lt;!&ndash;<a><img src="{{image.url}}" /></a>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      </div>
 
 
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
-  <!--<h1>nathan</h1>-->
+    </ion-content>
+
+    <ion-content class="flag subview-map" style="position:relative; display:default">
+      <div id="map" style="">
+        <h1>hello</h1>
+      </div>
 
 
+    </ion-content>
+
+    <ion-content class="flag subview-badges" style="height:2000px; position:relative; display:default">
+      <ion-list>
+        <div ng-repeat="badge in badges">
+          <div class="badge" style="float:left; margin: 13px;">
+            <img style="height:80px;" ng-src="{{badge.url}}">
+          </div>
+
+        </div>
+      </ion-list>
+    </ion-content>
+
+  </div>
+
+</div>
 
 
-<!--</main>-->
-<!--</ion-content>-->
-<!--&lt;!&ndash;<footer>&ndash;&gt;-->
-  <!--&lt;!&ndash;This is your footer.&ndash;&gt;-->
-<!--&lt;!&ndash;</footer>&ndash;&gt;-->

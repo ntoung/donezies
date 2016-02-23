@@ -10,9 +10,13 @@ angular.module('donezies.controllers', [])
   };
 })
 
-.controller('UserFeedCtrl', function($scope, $stateParams) {
+.controller('UserFeedCtrl', function($scope, $stateParams, UserFeedEntries) {
   console.log('UserFeedCtrl loaded.');
 
+  UserFeedEntries.all().then(function(feed) {
+    console.log("UserFeedEntries loaded.")
+    $scope.entries = feed;
+  })
 
 
 })
@@ -70,13 +74,13 @@ angular.module('donezies.controllers', [])
     if (endPositionY < startPositionY){
       // Scroll Down
       console.log('scrolled down');
-      $('.top-view').removeClass('showTop').addClass('hideTop');
+      $('.top-view').css('display', 'none');
       didScroll = false;
     } else {
       // Scroll Up
       if ((endPositionY - startPositionY) > 40){
         console.log('scrolled up');
-        $('.top-view').removeClass('hideTop').addClass('showTop');
+        $('.top-view').css('display', 'initial');
       }
     }
   }
@@ -137,12 +141,12 @@ angular.module('donezies.controllers', [])
     secondInstruction : false,
     slides : [
       {
-        'template' : 'templates/user-profile-entries.html',
+        'template' : 'templates/donezies.html',
         'viewable' : true
       },
 
       {
-        'template' : 'templates/donezies.html',
+        'template' : 'templates/user-profile.html',
         'viewable' : true
       },
 

@@ -2,8 +2,6 @@
 
 
 <div class="container">
-  <h2>USERFEED</h2>
-
   <div class="card" style="margin:20px; padding:15px; color: white; text-align:left;" ng-click="GoToEntry()" ng-repeat="entry in entries">
 
     <h4 style="margin:0">{{entry.title}}</h4>
@@ -18,8 +16,8 @@
     </div>
 
     <!-- More info -->
-    <div class="entry-info" id="{{entry.id}}" style="display:none">
-      <p style="font-style: italic">
+    <div class="entry-info" id="{{entry.id}}">
+      <p style="font-style: italic; color: black; font-size:1em;">
         by {{entry.author}}
       </p>
       <div style="width: 100%; align-content:center; font-size:1em; color:black;">
