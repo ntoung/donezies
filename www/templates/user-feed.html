@@ -1,1 +1,73 @@
-<h2>USERFEED</h2>
+<ion-content ng-controller="UserFeedCtrl">
+
+
+<div class="container">
+  <h2>USERFEED</h2>
+
+  <div class="card" style="margin:20px; padding:15px; color: white; text-align:left;" ng-click="GoToEntry()" ng-repeat="entry in entries">
+
+    <h4 style="margin:0">{{entry.title}}</h4>
+
+    <div style="font-size:1em; color:black;">
+      <p>
+        <i class="icon ion-clock" style="padding-right:10px;"> {{entry.date}}</i>
+        <i class="icon ion-eye" style="padding-right:10px;"> {{entry.views}}</i>
+        <i class="icon ion-heart" style="padding-right:10px;"> {{entry.favorites}}</i>
+      </p>
+
+    </div>
+
+    <!-- More info -->
+    <div class="entry-info" id="{{entry.id}}" style="display:none">
+      <p style="font-style: italic">
+        by {{entry.author}}
+      </p>
+      <div style="width: 100%; align-content:center; font-size:1em; color:black;">
+        <img ng-src="{{entry.cover}}" style="width:100%; align-content: center"/>
+        <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+        <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+        <p style="text-align:right;">Read More...</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <article>
+    <p>Climb Machu Picchu</p>
+    <img src="img/machupicchu.jpg"/>
+
+    <div class="details">
+      <img src="img/adam.jpg"/>
+      <p>Climb Machu Picchu</p>
+    </div>
+  </article>
+
+
+  <article class="darken">
+    <p>Go to Egypt</p>
+    <img src="img/egypt.jpg"/>
+
+  </article>
+
+  <article class="darken">
+    <p>Climb Machu Picchu</p>
+    <img src="img/machupicchu.jpg"/>
+
+  </article>
+
+  <article class="darken">
+    <p>Climb Machu Picchu</p>
+    <img src="img/machupicchu.jpg"/>
+
+  </article>
+
+  <article class="darken">
+    <p>Climb Machu Picchu</p>
+    <img src="img/machupicchu.jpg"/>
+
+  </article>
+</div>
+
+</ion-content>

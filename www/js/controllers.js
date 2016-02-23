@@ -10,7 +10,18 @@ angular.module('donezies.controllers', [])
   };
 })
 
-.controller('UserProfileCtrl', function ($scope, $stateParams, Users) {
+.controller('UserFeedCtrl', function($scope, $stateParams) {
+  console.log('UserFeedCtrl loaded.');
+
+
+
+})
+
+.controller('EntriesCtrl', function($scope, $stateParams) {
+  console.log('Entries loaded.');
+})
+
+.controller('UserProfileCtrl', function ($scope, $stateParams, $ionicScrollDelegate, Users, Badges, Entries) {
   console.log("UserProfileCtrl loaded.");
 
   Users.all().then(function(users) {
@@ -19,15 +30,32 @@ angular.module('donezies.controllers', [])
     $scope.user = users[0];
   });
 
+  Badges.all().then(function(badges) {
+    console.log("Badges loaded.");
+    $scope.badges = badges;
+  });
+
+  Entries.all().then(function(entries) {
+    console.log("Entries loaded.");
+    $scope.entries = entries;
+  })
+
+
+
 // Hide Header on on scroll down
   var didScroll;
   var lastScrollTop = 0;
   var delta = 5;
-  var profileOverviewHeight = $('.profile-overview').outerHeight();
-  console.log("scroll.");
 
-  $('main').scroll(function(event){
-    didScroll = true;
+  var startPositionY = $('.subview').position().top;
+
+  $('ion-content').scroll(function(event){
+    if (Math.abs(($('.subview').position().top - startPositionY)) > 100) {
+      if (!didScroll) {
+        didScroll = true;
+        startPositionY = $('.subview').position().top;
+      }
+    }
   });
 
   setInterval(function() {
@@ -35,30 +63,65 @@ angular.module('donezies.controllers', [])
       hasScrolled();
       didScroll = false;
     }
-  }, 250);
+  }, 200);
 
   function hasScrolled() {
-    var st = $(this).scrollTop();
-
-
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-      return;
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > profileOverviewHeight){
+    var endPositionY = $('.subview').position().top;
+    if (endPositionY < startPositionY){
       // Scroll Down
-      $('.profile-overview').removeClass('nav-down').addClass('nav-up');
+      console.log('scrolled down');
+      $('.top-view').removeClass('showTop').addClass('hideTop');
+      didScroll = false;
     } else {
       // Scroll Up
-      if(st + $(window).height() < $(document).height()) {
-        $('.profile-overview').removeClass('nav-up').addClass('nav-down');
+      if ((endPositionY - startPositionY) > 40){
+        console.log('scrolled up');
+        $('.top-view').removeClass('hideTop').addClass('showTop');
       }
     }
-
-    lastScrollTop = st;
   }
+
+  $scope.GoToEntry = function() {
+
+    console.log(this);
+
+    var id = this.entry.id;
+
+    var isHidden = $('#' + id).css('display') == 'none';
+
+    if (isHidden) {
+      $('#' + id).css("display", 'initial');
+    }
+    else {
+      $('#' + id).css("display", 'none');
+    }
+
+
+
+  }
+
+  /* Subview Controller */
+  $('.nav-entries').click(function(event) {
+    console.log("Subview: entries");
+    $('.subview-entries').css('display', 'initial');
+    $('.subview-map').css('display', 'none');
+    $('.subview-badges').css('display', 'none');
+  });
+
+  $('.nav-map').click(function(event) {
+    console.log("Subview: map");
+    $('.subview-entries').css('display', 'none');
+    $('.subview-map').css('display', 'initial');
+    $('.subview-badges').css('display', 'none');
+  });
+
+  $('.nav-badges').click(function(event) {
+    console.log("Subview: badges");
+    $('.subview-entries').css('display', 'none');
+    $('.subview-map').css('display', 'none');
+    $('.subview-badges').css('display', 'initial');
+  });
+
 
 
 

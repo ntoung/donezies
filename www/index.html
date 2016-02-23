@@ -35,28 +35,46 @@
     <!--<script src="js/services/User.js"></script>-->
     <!--<script src="js/donezies.js"></script>-->
 
+
+
   </head>
 
   <body ng-app="donezies" ng-controller="ViewCtrl" animation="slide-left-right-ios7">
 
+  <!-- ion-slide-box holds the main view control -->
+  <!-- active-slide="1" starts the view in the center -->
+  <ion-nav-view>
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="1" show-pager="false">
+      <!--<ion-nav-view>-->
+        <ion-slide ng-repeat="slide in data.slides | filter:{viewable : true}">
+
+          <div ng-include src="slide.template" style="height:100%"></div>
+        </ion-slide>
+      <!--</ion-nav-view>-->
+    </ion-slide-box>
+
+  </ion-nav-view>
 
 
 
-  <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false">
-    <!--<ion-nav-view>-->
+  <script type="text/javascript">
 
+    function initMap() {
+      var mapDiv = document.getElementById('map');
+      var mapOptions = {
 
-      <ion-slide ng-repeat="slide in data.slides | filter:{viewable : true}">
+        center: {lat: 33, lng: -120},
+        zoom: 5,
 
-        <div ng-include src="slide.template"></div>
-      </ion-slide>
-    <!--</ion-nav-view>-->
-  </ion-slide-box>
+        disableDefaultUI: true,
+        draggable: false
+      }
+      var map = new google.maps.Map(mapDiv, mapOptions);
 
-
-
-
-
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+          async defer></script>
 
 
   </body>

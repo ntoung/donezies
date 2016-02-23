@@ -1,8 +1,82 @@
-<ion-nav-view>
-<ion-view>
-  <ion-content>
+<div ng-controller="UserProfileCtrl" style="height:100%">
+  <!-- Top-View -->
+  <div class="top-view showTop">
     <h2>DONEZIES</h2>
-  </ion-content>
-</ion-view>
-</ion-nav-view>
+  </div>
+  <!-- Navbar -->
+  <div class="nav-bar" style="height:50px; position:relative; ">
+    <div class="tabs tabs-icon-only" style="bottom:initial; border-top-width:0px; background-color:white; z-index: 21; box-shadow:0 0px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);">
+      <a class="tab-item nav-entries" href="#/donezies/entries">
+        <i class="icon ion-images"></i>
+      </a>
+      </a>
+      <a class="tab-item nav-map" href="#/donezies/map">
+        <i class="icon ion-ios-location"></i>
+      </a>
+      <a class="tab-item nav-badges" href="#/donezies/badges">
+        <i class="icon ion-ribbon-b"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Subview -->
+  <div class="subview-container" style="height:100%; background-color:#efeff4; z-index: 0;">
+    <ion-content class="flag subview-entries" style=" position:relative; display:default">
+      <div style="padding-top: 1px;" class="subview">
+        <div class="card" style="margin:20px; padding:15px; color: white; text-align:left;" ng-click="GoToEntry()" ng-repeat="entry in entries">
+
+          <h4 style="margin:0">{{entry.title}}</h4>
+
+          <div style="font-size:1em; color:black;">
+            <p>
+              <i class="icon ion-clock" style="padding-right:10px;"> {{entry.date}}</i>
+              <i class="icon ion-eye" style="padding-right:10px;"> {{entry.views}}</i>
+              <i class="icon ion-heart" style="padding-right:10px;"> {{entry.favorites}}</i>
+            </p>
+
+          </div>
+
+          <!-- More info -->
+          <div class="entry-info" id="{{entry.id}}" style="display:none">
+            <p style="font-style: italic">
+              by {{entry.author}}
+            </p>
+            <div style="width: 100%; align-content:center; font-size:1em; color:black;">
+              <img ng-src="{{entry.cover}}" style="width:100%; align-content: center"/>
+              <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+              <!--<img src="img/egypt.jpg" style="width:32%"/>-->
+              <p style="text-align:right;">Read More...</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </ion-content>
+
+    <ion-content class="flag subview-map" style="position:relative; display:default">
+      <div id="map" style="">
+        <h1>hello</h1>
+      </div>
+
+
+    </ion-content>
+
+    <ion-content class="flag subview-badges" style="height:2000px; position:relative; display:default">
+      <ion-list>
+        <div ng-repeat="badge in badges">
+          <div class="badge" style="float:left; margin: 13px;">
+            <img style="height:80px;" ng-src="{{badge.url}}">
+          </div>
+
+        </div>
+      </ion-list>
+    </ion-content>
+
+  </div>
+
+</div>
+
 

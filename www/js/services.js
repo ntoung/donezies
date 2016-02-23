@@ -21,4 +21,39 @@ angular.module('donezies.services', [])
       return null;
     }
   };
+})
+
+
+.factory('Badges', function($http, $q) {
+  var badges;
+  return {
+    all: function() {
+      return badges = $http.get("data/badges.json").then(function(res) {
+        return res.data;
+      });
+    }
+  }
+})
+
+.factory('Entries', function($http, $q) {
+  var entries;
+  return {
+    all: function() {
+      return entries = $http.get("data/entries.json").then(function(res) {
+        return res.data;
+      });
+    }
+  }
+})
+
+.factory('UserFeedEntries', function($http, $q) {
+  var entries;
+  return {
+    all: function() {
+      return entries = $http.get("data/userfeed.json").then(function(res) {
+        return res.data;
+      });
+    }
+  }
 });
+

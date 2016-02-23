@@ -35,11 +35,23 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   .state('user-profile', {
     url: '/u',
     templateUrl: 'templates/user-profile-entries.html',
-    controller: 'UserProfileCtrl'
+    controller: 'ViewCtrl',
+    abstract:true
   })
     .state('user-profile.entries', {
-
+      url: '/donezies/entries',
+      views: {
+        'tab-entries': {
+          templateUrl: 'templates/user-profile-entries.html',
+          controller: 'EntriesCtrl',
+        },
+        'subview': {
+          templateUrl: 'templates/user-profile-entries.html',
+          controller: 'EntriesCtrl',
+        }
+      }
     })
+
     .state('user-profile.images', {
 
     })
@@ -109,6 +121,6 @@ var app = angular.module('donezies', ['ionic', 'donezies.controllers', 'donezies
   //  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/u');
+  //$urlRouterProvider.otherwise('/u');
 
 });

@@ -1,41 +1,52 @@
 [{
   "userId": 0,
-  "name": "Nathan Toung",
-  "title": "Go skydiving",
-  "views": 20,
-  "favorites": 20,
-  "completed": true
+  "id": 0,
+  "title": "Go to Pyramids",
+  "author": "Nathan Toung",
+  "date": "8 hours ago",
+  "views": "2.5M",
+  "favorites": "1.8K",
+  "completed": true,
+  "cover": "img/egypt.jpg"
 }, {
   "userId": 0,
-  "name": "Nathan Toung",
-  "title": "You on your way?",
-  "views": 20,
-  "favorites": 20,
-  "completed": false
-}, {
-  "userId": 0,
-  "name": "Nathan Toung",
-  "title": "You on your way?",
-  "views": 20,
-  "favorites": 20,
-  "completed": false
-}, {
-  "userId": 0,
-  "name": "Nathan Toung",
-  "title": "You on your way?",
-  "views": 20,
-  "favorites": 20,
-  "completed": false
-}, {
-  "userId": 0,
-  "name": "Nathan Toung",
-  "title": "You on your way?",
+  "id": 1,
+  "title": "Go to the Taj Mahal",
+  "author": "Nathan Toung",
   "views": 20,
   "favorites": 20,
   "completed": false,
+  "cover": "img/travel.jpg"
+}, {
+  "userId": 0,
+  "id": 2,
+  "title": "Go backpacking",
+  "author": "Nathan Toung",
+  "views": 20,
+  "favorites": 20,
+  "completed": false,
+  "cover": "img/backpackers.jpg"
+}, {
+  "userId": 0,
+  "id": 3,
+  "author": "Nathan Toung",
+  "title": "Climb Machu Picchu",
+  "views": 20,
+  "favorites": 20,
+  "completed": false,
+  "cover": "img/machupicchu.jpg"
+}, {
+  "userId": 0,
+  "id": 4,
+  "author": "Nathan Toung",
+  "title": "Swim with sharks",
+  "views": 20,
+  "favorites": 20,
+  "completed": false,
+  "cover": "img/shark-trip.jpg",
   "photos" : [
     {
-      "url": "images/photo.jpg"
+      "url": "images/shark-trip.jpg"
     }
   ]
 
